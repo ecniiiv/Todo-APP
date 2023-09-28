@@ -45,7 +45,7 @@ function todoTemplate(todo) {
   article.innerHTML = `
     <header class='todo-header'>
         <h1>${todo.title}</h1>
-        <div class="complete-indicator" style='background-color: ${completeIndicator}'></div>
+        <i class="fa-solid fa-check" style='color: ${completeIndicator}'></i>
     </header>
     <section class="about-todo">
         <div class="l-side">
@@ -158,7 +158,7 @@ function updateTodos(groupName, newValues) {
   render();
 }
 
-//Render all the todos (from default group) / grouping todos feature will added soon
+//Render all the todos
 function render() {
   const todos = JSON.parse(localStorage.getItem("default"));
   const todosContainer = document.querySelector("#todos-container");

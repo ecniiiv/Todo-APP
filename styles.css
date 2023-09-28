@@ -46,24 +46,28 @@ main {
   gap: 1em;
 }
 
-.navigation .color-guide-indicator > div > span {
+.navigation .color-guide-indicator span {
   transform: translateY(1px);
   font-size: 1.3rem;
 }
 
-.navigation .color-guide-indicator > div > div {
-  width: 16px;
-  height: 16px;
-
-  border-radius: 50%;
+.navigation .color-guide-indicator .divider {
+  border-left: 1px solid #333;
+  height: 100%;
+  transform: translateY(-3px);
 }
 
 .guide-complete-indicator {
-  background: rgb(79, 236, 132);
+  color: rgb(79, 236, 132);
 }
 
 .guide-incomplete-indicator {
-  background: rgb(64, 65, 64);
+  color: rgb(64, 65, 64);
+}
+
+.fa-check {
+  font-size: 24px;
+  transform: translateY(-5px);
 }
 
 /* ADD NEW FORM */
