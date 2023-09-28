@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo APP</title>
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="logo">Todo APP</div>
+    </header>
+    <main>
+      <nav class="navigation">
+        <div class="color-guide-indicator">
+          <div>
+            <div class="guide-complete-indicator"></div>
+            <span>Complete</span>
+          </div>
+
+          <div>
+            <div class="guide-incomplete-indicator"></div>
+            <span>Incomplete</span>
+          </div>
+        </div>
+        <div class="add-new-container">
+          <button id="add-new-btn" class="btn">New</button>
+          <div class="add-new-form-container hidden">
+            <form id="add-new-form">
+              <div id="form-error-msg" class="hidden">
+                <p>all input is required</p>
+              </div>
+              <div class="input-block">
+                <span class="required-marker">*</span>
+                <input type="text" name="title" maxlength="20" />
+              </div>
+              <div class="input-block">
+                <span class="required-marker">*</span>
+                <input type="text" name="notes" maxlength="90" />
+              </div>
+              <div class="input-block">
+                <span class="required-marker">*</span>
+                <input type="date" name="date" />
+              </div>
+              <button id="add-task-btn" class="btn" type="submit">Add</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+      <section id="todos-container" class="todos">
+        <!-- This is where all the todos will resides -->
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
