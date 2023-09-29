@@ -215,6 +215,16 @@ main {
   display: flex;
   gap: 1em;
   align-self: flex-end;
+  position: relative;
+}
+
+.todo .about-todo .options .are-you-sure {
+  position: absolute;
+  top: -1px;
+  width: 101%;
+  background: #eee;
+  text-align: center;
+  padding: 0.7em 0.6em;
 }
 
 /* BUTTON */
@@ -249,7 +259,17 @@ main {
   box-shadow: 0 0 5px rgb(159, 206, 250);
 }
 
+.btn-transparent {
+  background-color: transparent;
+  box-shadow: none;
+}
+
 /* MISC */
 .hidden {
   display: none;
+}
+
+.text-red {
+  color: rgb(250, 112, 112);
+  text-shadow: 0 0 1px #333;
 }

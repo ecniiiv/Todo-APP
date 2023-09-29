@@ -61,15 +61,40 @@ function todoTemplate(todo) {
             <button onclick='completeTodo(${todo.id})' class='btn btn-sky'>${
     todo.isCompleted ? "Incomplete" : "Complete"
   }</button>
-            <button onclick='deleteTodo(${
-              todo.id
-            })' class='btn btn-red'>Delete</button>
+              <button onclick='areYouSure(${
+                todo.id
+              })'  class='btn btn-red'>Delete</button>
+              <div id='popup-id${todo.id}' class='are-you-sure hidden'>
+                <p>Are you sure?</p>
+                <button onclick='deleteTodo(${
+                  todo.id
+                })' class='btn btn-transparent text-red'>Yes</button>
+                <button onclick='areYouSure(${
+                  todo.id
+                })' class='btn btn-transparent'>No</button>
+              </div>
           </div>
         </div>
     </section>
   `;
+
   return article;
 }
+
+// this function is passed as an onclick callback at line 67 and line 70
+function areYouSure(popupId) {
+  const popup = document.querySelector(`#popup-id${popupId}`);
+  if (popup.classList.contains("hidden")) {
+    popup.classList.remove("hidden");
+  } else {
+    popup.classList.add("hidden");
+  }
+}
+
+// Add new group functionality
+// function groupMaker() {
+//   const submitBtn = document.querySelector
+// }
 
 //Add new task functionality
 function todoMaker() {
@@ -120,6 +145,7 @@ function todoMaker() {
 }
 
 // TODO OPTIONS
+// this function is passed as an onclick callback at line 69
 function deleteTodo(todoId) {
   const todos = JSON.parse(localStorage.getItem("default"));
 
@@ -130,6 +156,7 @@ function deleteTodo(todoId) {
   updateTodos("default", newTodos);
 }
 
+// this function is passed as an onclick callback at line 61
 function completeTodo(todoId) {
   const todos = JSON.parse(localStorage.getItem("default"));
   console.log("clicked");
